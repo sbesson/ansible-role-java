@@ -31,7 +31,7 @@ docker:
 ansible:
   host_vars:
     java-jdk:
-    - java_jdk_install: True
+      java_jdk_install: True
 
 verifier:
   name: testinfra
