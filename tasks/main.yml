@@ -13,5 +13,5 @@
   yum:
     name: "java-{{ item }}-openjdk-devel"
     state: present
-  when: "{{ java_jdk_install }}"
+  when: java_jdk_install
   with_items: "{{ java_jre_versions }}"
