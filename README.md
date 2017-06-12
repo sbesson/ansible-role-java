@@ -21,7 +21,7 @@ Example Playbook
 
     - hosts: servers
       roles:
-         - { role: java }
+         - { role: openmicroscopy.java }
 
 
 Author Information
