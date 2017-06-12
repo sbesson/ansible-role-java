@@ -1,6 +1,10 @@
 Java
 ====
 
+
+[![Build Status](https://travis-ci.org/openmicroscopy/ansible-role-java.svg)](https://travis-ci.org/openmicroscopy/ansible-role-java)
+[![Ansible Role](https://img.shields.io/ansible/role/14303.svg)](https://galaxy.ansible.com/openmicroscopy/java/)
+
 Install Java JREs and optionally JDKs.
 
 
