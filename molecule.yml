@@ -21,17 +21,17 @@ vagrant:
 
 docker:
   containers:
-  - name: java-jre
-    image: centos
-    image_version: 7
-  - name: java-jdk
-    image: centos
-    image_version: 7
+    - name: java-jre
+      image: centos
+      image_version: 7
+    - name: java-jdk
+      image: centos
+      image_version: 7
 
 ansible:
   host_vars:
     java-jdk:
-      java_jdk_install: True
+      java_jdk_install: true
 
 verifier:
   name: testinfra

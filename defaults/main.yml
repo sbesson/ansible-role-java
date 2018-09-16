@@ -6,4 +6,4 @@ java_jre_versions:
   - 1.8.0
 
 # Install JDKs corresponding to JREs?
-java_jdk_install: False
+java_jdk_install: false

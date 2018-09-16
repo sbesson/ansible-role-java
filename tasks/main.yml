@@ -2,14 +2,14 @@
 # tasks file for roles/java
 
 - name: system packages | install java jre
-  become: yes
+  become: true
   yum:
     name: "java-{{ item }}-openjdk"
     state: present
   with_items: "{{ java_jre_versions }}"
 
 - name: system packages | install java jdk
-  become: yes
+  become: true
   yum:
     name: "java-{{ item }}-openjdk-devel"
     state: present
