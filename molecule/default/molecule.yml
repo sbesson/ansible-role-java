@@ -6,12 +6,20 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: instance
-    image: centos:7
+  - name: java-jre
+    image: centos
+    image_version: 7
+  - name: java-jdk
+    image: centos
+    image_version: 7
 provisioner:
   name: ansible
   lint:
     name: ansible-lint
+  inventory:
+    host_vars:
+      java-jdk:
+        java_jdk_install: true
 scenario:
   name: default
 verifier:
