@@ -7,11 +7,13 @@ lint:
   name: yamllint
 platforms:
   - name: java-jre
-    image: centos:7
+    image: ubuntu:18.04
   - name: java-jdk
-    image: centos:7
+    image: ubuntu:18.04
 provisioner:
   name: ansible
+  playbooks:
+    converge: ../resources/playbook.yml
   lint:
     name: ansible-lint
   inventory:
@@ -20,8 +22,9 @@ provisioner:
         java_jdk_install: true
 
 scenario:
-  name: default
+  name: ubuntu
 verifier:
   name: testinfra
+  directory: ../resources/tests/
   lint:
     name: flake8
