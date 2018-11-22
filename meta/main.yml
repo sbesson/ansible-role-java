@@ -4,7 +4,7 @@ galaxy_info:
   description: Install Java JREs and optionally JDKs.
   company: Open Microscopy Environment
   license: BSD
-  min_ansible_version: 2.1
+  min_ansible_version: 2.4
   platforms:
     - name: EL
       versions:
