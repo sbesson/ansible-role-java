@@ -10,6 +10,8 @@ platforms:
     image: ubuntu:18.04
   - name: java-jdk
     image: ubuntu:18.04
+  - name: java-jre11
+    image: ubuntu:18.04
 provisioner:
   name: ansible
   playbooks:
@@ -20,6 +22,9 @@ provisioner:
     host_vars:
       java-jdk:
         java_jdk_install: true
+      java-jre11:
+        java_jre_versions:
+          - "1.11.0"
 
 scenario:
   name: ubuntu
