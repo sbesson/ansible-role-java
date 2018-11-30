@@ -1,34 +1,39 @@
 ---
 # tasks file for roles/java
 
+- name: java | fail if old variable defined
+  fail:
+    msg: Variable 'java_jre_versions' has been replaced by 'java_versions'
+  when: 'java_jre_versions | default(False)'
+
 - name: system packages | install java jre (centos)
   become: true
   yum:
-    name: "java-{{ item }}-openjdk"
+    name: "java-1.{{ item }}.0-openjdk"
     state: present
   when: ansible_os_family == 'RedHat'
-  with_items: "{{ java_jre_versions }}"
+  with_items: "{{ java_versions }}"
 
 - name: system packages | install java jre (ubuntu)
   become: true
   apt:
-    name: "openjdk-{{ item.split('.')[1] }}-jre"
+    name: "openjdk-{{ item }}-jre"
     state: present
   when: ansible_os_family == 'Debian'
-  with_items: "{{ java_jre_versions }}"
+  with_items: "{{ java_versions }}"
 
 - name: system packages | install java jdk (centos)
   become: true
   yum:
-    name: "java-{{ item }}-openjdk-devel"
+    name: "java-1.{{ item }}.0-openjdk-devel"
     state: present
   when: java_jdk_install and ansible_os_family == 'RedHat'
-  with_items: "{{ java_jre_versions }}"
+  with_items: "{{ java_versions }}"
 
 - name: system packages | install java jdk (ubuntu)
   become: true
   apt:
-    name: "openjdk-{{ item.split('.')[1] }}-jdk"
+    name: "openjdk-{{ item }}-jdk"
     state: present
   when: java_jdk_install and ansible_os_family == 'Debian'
-  with_items: "{{ java_jre_versions }}"
+  with_items: "{{ java_versions }}"
