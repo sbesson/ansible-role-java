@@ -3,7 +3,7 @@ Java
 
 
 [![Build Status](https://travis-ci.org/ome/ansible-role-java.svg)](https://travis-ci.org/ome/ansible-role-java)
-[![Ansible Role](https://img.shields.io/ansible/role/14303.svg)](https://galaxy.ansible.com/openmicroscopy/java/)
+[![Ansible Role](https://img.shields.io/ansible/role/41018.svg)](https://galaxy.ansible.com/ome/java/)
 
 Install Java JREs and optionally JDKs.
 
