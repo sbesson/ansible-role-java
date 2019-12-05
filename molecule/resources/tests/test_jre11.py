@@ -10,9 +10,7 @@ def test_jre_version(host):
     assert host.exists('java')
     c = host.run('java -version')
     assert c.rc == 0
-    # TODO: On Ubuntu openjdk-11-jre will install Java 10 until the
-    # Java 11 Package is released
-    assert c.stderr.startswith('openjdk version "10.0.')
+    assert c.stderr.startswith('openjdk version "11.0.')
 
 
 def test_jdk_version(host):
