@@ -8,7 +8,7 @@
       openjdk-{{ java_backwards_compatibility_version.debian[item] |
       default(item) }}-jre
     state: present
-  with_items: "{{ java_jre_versions }}"
+  with_items: "{{ java_versions }}"
 
 - name: system packages | install java jdk (ubuntu)
   become: true
@@ -18,4 +18,4 @@
       default(item) }}-jdk
     state: present
   when: java_jdk_install
-  with_items: "{{ java_jre_versions }}"
+  with_items: "{{ java_versions }}"

@@ -1,6 +1,19 @@
 ---
 # tasks file for roles/java
 
+- block:
+
+    - name: java | warn about old java_jre_versions variables
+      fail:
+        msg: java_jre_versions variable is deprecated, use java_versions instead
+      ignore_errors: true
+
+    - name: java | set java_versions from old java_jre_versions variables
+      set_fact:
+        java_versions: "{{ java_jre_versions }}"
+
+  when: java_jre_versions is defined
+
 - import_tasks: redhat.yml
   when: ansible_os_family | lower == 'redhat'
 

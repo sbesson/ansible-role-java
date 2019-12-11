@@ -25,10 +25,10 @@ provisioner:
       java-jdk:
         java_jdk_install: true
       java-jre11:
-        java_jre_versions:
+        java_versions:
           - "11"
       java-jdk11:
-        java_jre_versions:
+        java_versions:
           - "11"
         java_jdk_install: true
 
