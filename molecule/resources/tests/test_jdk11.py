@@ -17,5 +17,5 @@ def test_jdk_version(host):
     assert host.exists('javac')
     c = host.run('javac -version')
     assert c.rc == 0
-    # Output has changed from stderr to stdout for javac 11 only ¯\_(ツ)_/¯
+    # Output has changed from stderr to stdout for javac 11 only
     assert c.stdout.startswith('javac 11.0')
