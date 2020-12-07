@@ -30,7 +30,7 @@ jobs:
         scenario: ${{fromJson(needs.list-scenarios.outputs.matrix)}}
     steps:
       - uses: actions/checkout@v2
-      - uses: manics/ome-ansible-molecule@action-nodocker
+      - uses: manics/action-ome-ansible-molecule@main
         with:
           scenario: ${{ matrix.scenario }}
 
